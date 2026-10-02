@@ -1,7 +1,7 @@
 
 class Solution:
     def orangesRotting(self, grid: list[list[int]]) -> int:
-        queue = deque()
+        queue = []
         fresh = 0
         time = 0
 
@@ -17,7 +17,7 @@ class Solution:
         while queue and fresh > 0:
             for _ in range(len(queue)):
 
-                i, j = queue.popleft()
+                i, j = queue.pop(0)
 
                 # up
                 if i - 1 >= 0 and grid[i - 1][j] == 1:
